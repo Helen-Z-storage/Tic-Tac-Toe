@@ -5,8 +5,8 @@ Documents
 - logic.py shows the basic logic of the TTT game itself.
 - the .html .css and .js files are basis of the TTT game with pure JS code.
 - the documents in the tictactoe folder are the React framework version of the TTT game.
-  - JSX code store in ./tictactoe/src/index.js
-  - CSS code store in ./tictactoe/src/index.css
+  - JSX code store in index.js
+  - CSS code store in index.css
 
 Abilities
 - able to choose board size in 3x3, 4x4, 5x5, and 6x6
