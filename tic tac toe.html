@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <meta charset="utf-8">
+      <title>Tic-Tac-Toe</title>
+
+      <!-- React official CDN address -->
+      <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+      <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+      <!-- Not recommended in production environment -->
+      <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+      <!-- codes -->
+      <script type="text/javascript" src="TicTacToe.js"></script>
+
+      <!-- css styles-->
+      <link rel="stylesheet" type="text/css" href="TicTacToe.css">
+</head>
+<body>
+      <table id="console">
+            <thead id="title">
+                  <tr>
+                        <td colspan="3">
+                              <h1 id='warped'>
+                                    <span class='w0'>T</span><span class='w1'>i</span><span class='w2'>c</span><span class='w3'> </span><span class='w4'>T</span><span class='w5'>a</span><span class='w6'>c</span><span class='w7'> </span><span class='w8'>T</span><span class='w9'>o</span><span class='w10'>e</span>
+                              </h1>
+                        </td>
+                  </tr>
+            </thead>
+            <tbody>
+                  <tr> 
+                        <td id = "create_board">
+                              <input type="radio" name="size" id = "size_3" value=3 onclick="able_confirm('confirm_board')">
+                              <label for="size_3">3</label>
+                              <input type="radio" name="size" id = "size_4" value=4 onclick="able_confirm('confirm_board')">
+                              <label for="size_4">4</label>
+                              <br />
+                              <input type="radio" name="size" id = "size_5" value=5 onclick="able_confirm('confirm_board')">
+                              <label for="size_5">5</label>
+                              <input type="radio" name="size" id = "size_6" value=6 onclick="able_confirm('confirm_board')">
+                              <label for="size_6">6</label>
+                              <br />
+                              <button type="button" id = "confirm_board" disabled onclick="make_TTT_board()">confirm board size</button>
+                        </td>
+                        <td id = "create_player">
+                              <!-- create player before game start -->
+                              <input type="radio" name="role" id = "X" value="X" onclick="able_confirm('confirm_player')">
+                              <label for="X">X</label>
+                              <input type="radio" name="role" id = "O" value="O" onclick="able_confirm('confirm_player')">
+                              <label for="O">O</label>
+                              <br />
+                              <input type="radio" name="coin" id = "head" value=H onclick="able_confirm('confirm_player')">
+                              <label for="head">Head</label>
+                              <input type="radio" name="coin" id = "tail" value=T onclick="able_confirm('confirm_player')">
+                              <label for="tail">Tail</label>
+                              <br />
+                              <button type="button" id = "confirm_player" disabled onclick="make_TTT_player()">confirm player decision</button>
+                        </td>
+                        <td id = "display_player">
+                              <!-- display player data -->
+                              <label id = "player"></label>
+                        </td>
+                  </tr>
+                  <tr>
+                        <td id="display_result" colspan="3">      
+                              <!-- display solution -->
+                              <label id = "result"></label>
+                              <!-- restart button-->
+                              <button type="button" onclick="clear_board()"> restart </button>
+                        </td>
+                  </tr>
+                  <tr>
+                        <td id = "board_space" colspan="3">
+                        </td>
+                  </tr>
+            </tbody>
+      </table>
+</body>
+</html>

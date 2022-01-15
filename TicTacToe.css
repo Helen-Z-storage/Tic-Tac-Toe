@@ -1,0 +1,375 @@
+
+/* these css code avaliable on IE9, Opera, Firefox, and Webkit */
+* {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+         -o-box-sizing: border-box;
+            box-sizing: border-box;
+    color: #9b673d;  
+    background-color:SandyBrown;
+    font-family:"Comic Sans MS", cursive, sans-serif;
+    font-size: 15px;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+/* show scrol bar when have small height*/
+@media (max-height: 549px) {body {overflow: visible;}}
+
+/* css for all elements */
+/* tables have no border */
+table {border: none;}
+
+/* hiding radio button and change label color when checked */
+input[type=radio] {visibility: hidden;}
+
+input[type="radio"]:checked + label {
+    background-color: #9b673d;
+    color: sandybrown;
+}
+
+/* hiding button border, let it invisible when diabled */
+button {border: hidden;}
+
+button:focus {color: #9b673d;}
+
+button:disabled, button[disabled]{color: sandybrown;}
+
+/* labels are allowed <br /> using */
+label {white-space: pre-wrap;}
+
+/* css for element with specific id */
+#console {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 550px;
+    height: 460px;
+    min-width: 550px;
+    min-height: 420px;
+    /* center code from https://segmentfault.com/a/1190000014116655 */
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+       -moz-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+         -o-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+}
+
+#title {height: 94px;}
+
+#create_board, #create_player, #display_player {
+    width: 33%;
+    height: 100px;
+}
+
+#display_result {
+    height: 25px;
+    position: relative;
+}
+
+#display_result button {float: right;}
+
+#result {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+       -moz-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+         -o-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+}
+
+#board_space {
+    height: 200px;
+    position: relative;
+    width: 100%
+}
+
+#board{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+       -moz-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+         -o-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+    border-collapse:collapse;
+    table-layout: auto;
+    max-width: 600px;
+    height: 100%
+}
+
+/* create board with border but delete outside border */
+#board tbody {
+    position: relative;
+    float: left;
+  }
+  
+#board td {
+    border: 5px solid #9b673d;
+    height: 25px;
+    padding: 0px;
+}
+
+#board tr:first-child td {border-top: none;}
+  
+#board tr:last-child td {border-bottom: none;}
+  
+#board tr td:first-child {border-left: none;}
+  
+#board tr td:last-child {border-right: none;}
+
+/* square button in board is more nice*/
+#board button {
+    height: 25px;
+    width: 25px;
+    float: left;
+}
+
+/* let player know current board is not useful */
+#board button:disabled, #board button[disabled]{background-color: #9b673d;}
+
+/* wave code idea from https://icode.best/i/60048134221068 */
+.box{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    overflow: visible; 
+}
+
+.spread{
+    position: relative;
+    animation: spread 3s linear;
+    animation-fill-mode: forwards;
+}
+
+.background-wave{
+    position: relative;
+    animation: backgroud-wave linear infinite;
+}
+
+.background-wave1{
+    position: absolute;
+    top: 40%;
+    left: -30%;
+    background: #05cbe7;
+    opacity: 1;
+    width: 3600px;
+    height: 3600px;
+    border-radius: 40%;
+    animation: inherit;
+    animation-duration: 3s;
+}
+
+.background-wave2{
+    position: absolute;
+    top: 30%;
+    left: -15%;
+    background: #05cbe7;
+    opacity: 0.75;
+    width: 3600px;
+    height: 3600px;
+    border-radius: 36%;
+    animation: inherit;
+    animation-duration: 5s;
+}
+
+.background-wave3{
+    position: absolute;
+    top: 30%;
+    left: -15%;
+    background: #05cbe7;
+    opacity: 0.5;
+    width: 3600px;
+    height: 3600px;
+    border-radius: 30%;
+    animation: inherit;
+    animation-duration: 7s;
+}
+
+.background-wave4{
+    position: absolute;
+    top: 30%;
+    left: -15%;
+    background: #05cbe7;
+    opacity: 0.25;
+    width: 3600px;
+    height: 3600px;
+    border-radius: 24%;
+    animation: inherit;
+    animation-duration: 15s;
+}
+
+@keyframes backgroud-wave {
+    0% {
+        -webkit-transform: rotate(0deg);
+           -moz-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+             -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+           -moz-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+             -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }  
+}
+
+@keyframes spread {
+    0%   {left: -1424px; top: -4984px;}
+    50%  {left: -1424px; top: -3204px;}  
+    100% {left: -1424px; top: -4984px;}
+}
+
+/* get these css warp code on title from https://csswarp.eleqtriq.com/ */
+#warped {
+    position: relative; 
+    display: block; 
+    width: 264px; 
+    height: 94px;
+    margin: 0 auto;
+}
+
+#warped>span[class^=w]:nth-of-type(n+0){
+    display: block; 
+    position: absolute;
+    -webkit-transform-origin: 50% 100%;
+       -moz-transform-origin: 50% 100%;
+        -ms-transform-origin: 50% 100%;
+         -o-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+}
+
+#warped span{  
+    font-size: 38px;
+    font-weight: regular;
+    font-style: normal;
+    line-height: 0.65; 
+    white-space: pre; 
+    overflow: visible; 
+    padding: 0px;
+}
+
+#warped .w0 {
+    -webkit-transform: rotate(-0.75rad);
+       -moz-transform: rotate(-0.75rad);
+        -ms-transform: rotate(-0.75rad);
+         -o-transform: rotate(-0.75rad);
+            transform: rotate(-0.75rad);
+    width: 21px; height: 25px; 
+    left: 19.84px; top: 45.93px;
+}
+
+#warped .w1 {
+    -webkit-transform: rotate(-0.61rad);
+       -moz-transform: rotate(-0.61rad);
+        -ms-transform: rotate(-0.61rad);
+         -o-transform: rotate(-0.61rad);
+            transform: rotate(-0.61rad);
+    width: 10px; height: 25px; 
+    left: 41.33px; top: 33.13px;
+}
+
+#warped .w2 {
+    -webkit-transform: rotate(-0.48rad);
+       -moz-transform: rotate(-0.48rad);
+        -ms-transform: rotate(-0.48rad);
+         -o-transform: rotate(-0.48rad);
+            transform: rotate(-0.48rad);
+    width: 18px; height: 25px; 
+    left: 53.61px; top: 23.35px;
+}
+
+#warped .w3 {
+    -webkit-transform: rotate(-0.35rad);
+       -moz-transform: rotate(-0.35rad);
+        -ms-transform: rotate(-0.35rad);
+         -o-transform: rotate(-0.35rad);
+            transform: rotate(-0.35rad);
+    width: 12px; height: 25px; 
+    left: 74.95px; top: 15.42px;
+}
+
+#warped .w4 {
+    -webkit-transform: rotate(-0.2rad);
+       -moz-transform: rotate(-0.2rad);
+        -ms-transform: rotate(-0.2rad);
+         -o-transform: rotate(-0.2rad);
+            transform: rotate(-0.2rad);
+    width: 21px; height: 25px; 
+    left: 91.17px; top: 9.75px;
+}
+
+#warped .w5 {
+    -webkit-transform: rotate(-0.01rad);
+       -moz-transform: rotate(-0.01rad);
+        -ms-transform: rotate(-0.01rad);
+         -o-transform: rotate(-0.01rad);
+            transform: rotate(-0.01rad);
+    width: 24px; height: 25px; 
+    left: 116.99px; top: 7px;
+}
+
+#warped .w6 {
+    -webkit-transform: rotate(0.17rad);
+       -moz-transform: rotate(0.17rad);
+        -ms-transform: rotate(0.17rad);
+         -o-transform: rotate(0.17rad);
+            transform: rotate(0.17rad);
+    width: 18px; height: 25px; 
+    left: 145.87px; top: 9.12px;
+}
+
+#warped .w7 {
+    -webkit-transform: rotate(0.3rad);
+       -moz-transform: rotate(0.3rad);
+        -ms-transform: rotate(0.3rad);
+         -o-transform: rotate(0.3rad);
+            transform: rotate(0.3rad);
+    width: 12px; height: 25px; 
+    left: 168.29px; top: 13.83px;
+}
+
+#warped .w8 {
+    -webkit-transform: rotate(0.45rad);
+       -moz-transform: rotate(0.45rad);
+        -ms-transform: rotate(0.45rad);
+         -o-transform: rotate(0.45rad);
+            transform: rotate(0.45rad);
+    width: 21px; height: 25px; 
+    left: 183.75px; top: 21.78px;
+}
+
+#warped .w9 {
+    -webkit-transform: rotate(0.63rad);
+       -moz-transform: rotate(0.63rad);
+        -ms-transform: rotate(0.63rad);
+         -o-transform: rotate(0.63rad);
+            transform: rotate(0.63rad);
+    width: 23px; height: 25px; 
+    left: 205.81px; top: 35.74px;
+}
+
+#warped .w10 {
+    -webkit-transform: rotate(0.81rad);
+       -moz-transform: rotate(0.81rad);
+        -ms-transform: rotate(0.81rad);
+         -o-transform: rotate(0.81rad);
+            transform: rotate(0.81rad);
+    width: 21px; height: 25px; 
+    left: 226.94px; top: 53.68px;
+}
